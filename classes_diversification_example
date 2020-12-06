@@ -1,0 +1,6 @@
+In [3]:
+@injecting(a=42, foo='bar')
+class C:
+    pass
+In [3]: C.a, C.foo
+Out[3]: (42, 'bar')
