@@ -15,7 +15,7 @@ class Email:
         """
         if (
             len(self.json_content["content"]) == 0
-            or type(self.json_content["content"]) is int
+            or isinstance(self.json_content["content"], int)
             or self.json_content["content"] is None
         ):
             """Nothing to do with such case"""
@@ -51,7 +51,7 @@ class Email:
         """
         if (
             len(self.json_content["content"]) == 0
-            or type(self.json_content["content"]) is int
+            or isinstance(self.json_content["content"], int)
             or self.json_content["content"] is None
         ):
             """Nothing to do with such case"""
@@ -72,9 +72,7 @@ class Email:
                     )
                 )
                 for replace_rule in replacing_rules:
-                    self.json_content["content"] = self.json_content[
-                        "content"
-                    ].replace(
+                    self.json_content["content"] = self.json_content["content"].replace(
                         replace_rule, replacing_rules.get(replace_rule, "")
                     )
             except TypeError:
